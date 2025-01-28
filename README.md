@@ -8,9 +8,11 @@ If u want to reset your data, you need to clear local storage:
 5. Select "Delete all"
 
 Guide:
-You can change your name and quantity of your BP`s.
-Uncheck all button: when you are starting your farm day and you need to cancel status of your tasks.
-New Quest adding new task to the list.
-Plus button inside the task: just change the status of your task.
-Check button inside the task: change status of your task and add the BP poins to your wallet.
-Delete task button is removing task from the list.
+1. You can change your name and quantity of your BP`s.
+2. Uncheck all button: when you are starting your farm day and you need to cancel status of your tasks.
+3. New Quest adding new task to the list.
+4. Plus button inside the task: just change the status of your task.
+5. Check button inside the task: change status of your task and add the BP poins to your wallet.
+6. Delete task button is removing task from the list.
+
+Check the tooltips on hover of the button for more info.
