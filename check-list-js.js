@@ -84,6 +84,21 @@
             rewardPrice: 2,
             title: 'Выиграть 3 любых игры на арене со ставкой',
           },
+          casino: {
+            rewardType: 'casino',
+            rewardPrice: 4,
+            title: 'Нули в казино',
+          },
+          post: {
+            rewardType: 'post',
+            rewardPrice: 2,
+            title: '10 посылок на почте',
+          },
+          bus: {
+            rewardType: 'bus',
+            rewardPrice: 4,
+            title: '2 круга на любом маршруте автобусника',
+          },
         },
 
         tasks: [
