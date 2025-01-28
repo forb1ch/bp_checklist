@@ -2,6 +2,7 @@
     let state = {
         playerName: "Player",
         coins: 0,
+        vip: true,
         taskReward: {
           build: {
             rewardType: 'build',
@@ -139,8 +140,9 @@
       function updateTaskList() {
         const taskList = document.getElementById("taskList");
         taskList.innerHTML = "";
-
+        
         state.tasks.forEach((task, index) => {
+          const price = state.vip == true ? task.rewardPrice : task.rewardPrice / 2;
           const taskElement = document.createElement("div");
           taskElement.className = `task-item bg-zinc-900 hover:shadow-md hover:bg-zinc-800 rounded-lg p-4 ${
             task.completed ? "opacity-70" : ""
@@ -154,7 +156,7 @@
                       </div>
                       <div class="flex mt-1 lg:m-0 md:m-0 items-center space-x-2">
                           <span class="px-2 py-1 bg-purple-500/20 rounded-lg text-sm">
-                              +${task.rewardPrice}
+                              +${price}
                           </span>
                           ${
                             !task.completed
@@ -209,11 +211,13 @@
 
       function completeTask(index) {
         const task = state.tasks[index];
+        const price = state.vip == true ? task.rewardPrice : task.rewardPrice / 2;
+
         if (task.completed == true) {
             task.completed = !task.completed;
         } else {
             task.completed = true;
-            state.coins += task.rewardPrice;
+            state.coins += price;
         }
 
         // Add completion animation
@@ -259,6 +263,16 @@
         }
 
         state.tasks = tasksList;
+   
+        saveState();
+        updateUI();
+      }
+
+      function vipStatus() {
+        const vip = state.vip;
+        const btn = document.getElementById('vip-btn');
+
+        state.vip = !state.vip;
    
         saveState();
         updateUI();
@@ -327,6 +341,15 @@
       // Initialize app with some example tasks if empty
       function initializeApp() {
         loadState();
+        const vip = state.vip;
+        const btn = document.getElementById('vip-btn');
+
+        if (state.vip == true) {
+          btn.checked = true;
+        } else {
+          btn.checked = false;
+        }
+
         if (state.tasks.length === 0) {
 
             const tasksList = state.taskReward;
