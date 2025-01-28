@@ -1,4 +1,4 @@
-Check list save your date to the local storage.
+Check list save your data to the local storage.
 
 If u want to reset your data, you need to clear local storage:
 1. Press F12.
