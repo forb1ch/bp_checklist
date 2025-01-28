@@ -382,11 +382,7 @@
           if (button.querySelector("i")) {
             button.setAttribute(
               "title",
-              button.querySelector("i").className.includes("check")
-                ? "Complete Quest"
-                : button.querySelector("i").className.includes("trash")
-                  ? "Delete Quest"
-                  : "Edit Name",
+              button.getAttribute("title"),
             );
           }
         });
