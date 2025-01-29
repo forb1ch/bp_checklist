@@ -56,7 +56,7 @@
           },
           film_studio: {
             rewardType: 'film_studio',
-            rewardPrice: 2,
+            rewardPrice: 4,
             title: 'Арендовать киностудию',
           },
           ammunation: {
@@ -66,7 +66,7 @@
           },
           hunting: {
             rewardType: 'hunting',
-            rewardPrice: 2,
+            rewardPrice: 4,
             title: '5 раз снять 100% шкуру с животных',
           },
           contraband: {
