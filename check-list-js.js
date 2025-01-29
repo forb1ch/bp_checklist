@@ -71,7 +71,7 @@
           },
           contraband: {
             rewardType: 'contraband',
-            rewardPrice: 2,
+            rewardPrice: 4,
             title: 'Сдать 5 контрабанды',
           },
           tk: {
