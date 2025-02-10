@@ -867,14 +867,22 @@
                 </div>
 
                   <!-- Platinum vip status -->
-                  <div
-                  class="mt-6 bg-zinc-800 rounded-lg p-4 w-full transition-all duration-300 hover:bg-gray-600"
-                >
+                <div class="mt-6 bg-zinc-800 rounded-lg p-4 w-full transition-all duration-300 hover:bg-gray-600">
                   <div class="flex items-center justify-between">
                     <div class="flex flex-col">
                       <h1 class="font-medium leading-none"> Gold/Platinum vip status:</h1>
                     </div>
                     <input id="vip-btn" type="checkbox" onclick="vipStatus()" class="cursor-pointer accent-purple-400 text-purple-600 bg-gray-100 border-gray-300 rounded-sm h-5 w-5" />
+                  </div>
+                </div>
+                
+                <!-- X2 Works -->
+                <div class="mt-6 bg-zinc-800 rounded-lg p-4 w-full transition-all duration-300 hover:bg-gray-600">
+                  <div class="flex items-center justify-between">
+                    <div class="flex flex-col">
+                      <h1 class="font-medium leading-none">x2 works:</h1>
+                    </div>
+                    <input id="x2-btn" type="checkbox" onclick="x2Status()" class="cursor-pointer accent-purple-400 text-purple-600 bg-gray-100 border-gray-300 rounded-sm h-5 w-5" />
                   </div>
                 </div>
               </div>
@@ -906,7 +914,7 @@
 
               <div
                 id="taskList"
-                class="space-y-4 h-[480px] max-h-full overflow-y-auto pr-2"
+                class="space-y-4 h-[480px] max-h-full overflow-y-auto pr-2 flex flex-col"
               >
               </div>
             </div>

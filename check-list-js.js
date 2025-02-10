@@ -3,6 +3,7 @@
         playerName: "Player",
         coins: 0,
         vip: true,
+        x2: false,
         taskReward: {
           build: {
             rewardType: 'build',
@@ -99,8 +100,12 @@
             rewardPrice: 4,
             title: '2 круга на любом маршруте автобусника',
           },
+          gym: {
+            rewardType: 'gym',
+            rewardPrice: 2,
+            title: '20 подходов в зале',
+          },
         },
-
         tasks: [
         ],
       };
@@ -157,10 +162,11 @@
         taskList.innerHTML = "";
         
         state.tasks.forEach((task, index) => {
-          const price = state.vip == true ? task.rewardPrice : task.rewardPrice / 2;
+          let price = state.vip == true ? task.rewardPrice : task.rewardPrice / 2;
+          price = state.x2 == true ? price * 2 : price;
           const taskElement = document.createElement("div");
           taskElement.className = `task-item bg-zinc-900 hover:shadow-md hover:bg-zinc-800 rounded-lg p-4 ${
-            task.completed ? "opacity-70" : ""
+            task.completed ? "opacity-70 order-last" : "order-none"
           } transform transition-all duration-300`;
           taskElement.innerHTML = `
                   <div class="flex flex-col lg:flex-row md:flex-row justify-between items-start">
@@ -226,8 +232,8 @@
 
       function completeTask(index) {
         const task = state.tasks[index];
-        const price = state.vip == true ? task.rewardPrice : task.rewardPrice / 2;
-
+        let price = state.vip == true ? task.rewardPrice : task.rewardPrice / 2;
+        price = state.x2 == true ? price * 2 : price;
         if (task.completed == true) {
             task.completed = !task.completed;
         } else {
@@ -288,6 +294,17 @@
         const btn = document.getElementById('vip-btn');
 
         state.vip = !state.vip;
+   
+        saveState();
+        updateUI();
+      }
+
+
+      function x2Status() {
+        const x2 = state.x2;
+        const btn = document.getElementById('x2-btn');
+
+        state.x2 = !state.x2;
    
         saveState();
         updateUI();
@@ -363,6 +380,16 @@
           btn.checked = true;
         } else {
           btn.checked = false;
+        }
+
+        const x2 = state.vip;
+        const x2btn = document.getElementById('x2-btn');
+
+        
+        if (state.x2 == true) {
+          x2btn.checked = true;
+        } else {
+          x2btn.checked = false;
         }
 
         if (state.tasks.length === 0) {
