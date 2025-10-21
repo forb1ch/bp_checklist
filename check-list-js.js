@@ -105,6 +105,91 @@
             rewardPrice: 2,
             title: '20 подходов в зале',
           },
+          site: {
+            rewardType: 'site',
+            rewardPrice: 2,
+            title: 'Зайти на любой сайт',
+          },
+          match: {
+            rewardType: 'match',
+            rewardPrice: 2,
+            title: 'Поставить любую реаку в match.',
+          },
+          basketball: {
+            rewardType: 'basketball',
+            rewardPrice: 2,
+            title: 'Забить два гола в баскете.',
+          },
+          football: {
+            rewardType: 'football',
+            rewardPrice: 2,
+            title: 'Забить два гола в футболе.',
+          },
+          tennis: {
+            rewardType: 'tennis',
+            rewardPrice: 2,
+            title: 'Поиграть 1 минуту в настольный теннис.',
+          },
+          bigtennis: {
+            rewardType: 'bigtennis',
+            rewardPrice: 2,
+            title: 'Поиграть 1 минуту в большой теннис.',
+          },
+          voleyball: {
+            rewardType: 'voleyball',
+            rewardPrice: 2,
+            title: 'Забить 10 голов в воллейболе.',
+          },
+          darts: {
+            rewardType: 'darts',
+            rewardPrice: 2,
+            title: 'Победа в дартс.',
+          },
+          arms: {
+            rewardType: 'arms',
+            rewardPrice: 2,
+            title: 'Победа в арм ресслинге.',
+          },
+          fish: {
+            rewardType: 'fish',
+            rewardPrice: 8,
+            title: 'Поймать 20 рыб.',
+          },
+          metro: {
+            rewardType: 'metro',
+            rewardPrice: 4,
+            title: 'Проехать 1 станцию на метро.',
+          },
+          service: {
+            rewardType: 'service',
+            rewardPrice: 2,
+            title: 'Починить деталь в автосервисе.',
+          },
+          bigcasino: {
+            rewardType: 'bigcasino',
+            rewardPrice: 6,
+            title: 'Ставка в колесе удачи в казино (межсерверное колесо).',
+          },
+          brawl: {
+            rewardType: 'brawl',
+            rewardPrice: 2,
+            title: 'Зайти в любой канал в Brawl.',
+          },
+          petball: {
+            rewardType: 'petball',
+            rewardPrice: 4,
+            title: 'Кинуть мяч питомцу 15 раз.',
+          },
+          pet: {
+            rewardType: 'pet',
+            rewardPrice: 4,
+            title: '15 выполненных питомцем команд.',
+          },
+          club: {
+            rewardType: 'club',
+            rewardPrice: 8,
+            title: 'Выполнить 2 квеста любых клубов 4/8 BP.',
+          },
         },
         tasks: [
         ],
