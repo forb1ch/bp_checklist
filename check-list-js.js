@@ -190,6 +190,11 @@
             rewardPrice: 8,
             title: 'Выполнить 2 квеста любых клубов 4/8 BP.',
           },
+          mafia: {
+            rewardType: 'mafia',
+            rewardPrice: 6,
+            title: 'Сыграть в мафию в казино.',
+          },
         },
         tasks: [
         ],
