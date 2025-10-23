@@ -354,12 +354,8 @@
             state.coins += price;
         }
 
-
         if (task.rewardType === 'online') {
           task.completedCount++;
-          console.log({
-            onlineCOunt: task.completedCount,
-          });
         }
 
         // Add completion animation
@@ -399,6 +395,10 @@
             if (!tasksList.hasOwnProperty(task)) continue;
             const completed = false;
             var obj = tasksList[task];
+            
+            if (obj.rewardType === 'online') {
+              obj.completedCount = 0;
+            }
 
             obj.completed = false;
         }
