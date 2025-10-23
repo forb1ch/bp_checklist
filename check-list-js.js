@@ -195,6 +195,21 @@
             rewardPrice: 6,
             title: 'Сыграть в мафию в казино.',
           },
+          trucker: {
+            rewardType: 'trucker',
+            rewardPrice: 4,
+            title: 'Выполнить 3 заказа дальнобойщиком.',
+          },
+          airdrop: {
+            rewardType: 'airdrop',
+            rewardPrice: 4,
+            title: 'Принять участие в двух аирдропах.',
+          },
+          online: {
+            rewardType: 'airdrop',
+            rewardPrice: 4,
+            title: '3 часа в онлайне.',
+          },
         },
         tasks: [
         ],
