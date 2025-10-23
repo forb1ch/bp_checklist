@@ -398,13 +398,12 @@
       // Task management functions
       function addNewTask(event) {
         event.preventDefault();
-        const rewardType = document.getElementById("taskRewardTypeSelect").value;
+        const rewardType = document.getElementById("taskRewardType").value;
         const rewardPrice = state.taskReward[rewardType].rewardPrice;
         const title = state.taskReward[rewardType].title;
         let deletedTaskIndex = 0;
         const tasksListToAdd = state.tasksToAdd;
         let taskListRemoved = [];
-
 
         taskListRemoved = tasksListToAdd.filter(item => item.rewardType !== rewardType);
         state.tasksToAdd = taskListRemoved;
