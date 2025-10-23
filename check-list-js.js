@@ -279,7 +279,7 @@
                       <div class="max-w-sm">
                           <h3 class="font-bold ${
                             task.completed && task.rewardType !== 'online' ? "line-through" : ""
-                          }">${index + 1}: ${task.title}${task.rewardType === 'online' ? ` Выполнено: ${task.completedCount}раз.` : ' 0'}</h3>
+                          }">${index + 1}: ${task.title}${task.rewardType === 'online' ? ` Выполнено: ${task.completedCount}раз.` : ''}</h3>
                       </div>
                       <div class="flex mt-1 lg:m-0 md:m-0 items-center space-x-2">
                           <span class="px-2 py-1 bg-purple-500/20 rounded-lg text-sm">
