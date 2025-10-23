@@ -5,50 +5,16 @@
         vip: true,
         x2: false,
         taskReward: {
-          build: {
-            rewardType: 'build',
+          online: {
+            rewardType: 'online',
             rewardPrice: 4,
-            title: '25 действий на стройке',
-          },
-          mine: {
-            rewardType: 'mine',
-            rewardPrice: 4,
-            title: '25 действий в шахте',
-          },
-          port: {
-            rewardType: 'port',
-            rewardPrice: 4,
-            title: '25 действий в порту',
-          },
-          carting: {
-            rewardType: 'carting',
-            rewardPrice: 2,
-            title: 'Выиграть гонку в картинге',
+            title: '3 часа в онлайне.',
+            completedCount: 0,
           },
           lottery: {
             rewardType: 'lottery',
             rewardPrice: 2,
             title: 'Купить лотерейный билет',
-          },
-          ferm: {
-            rewardType: 'ferm',
-            rewardPrice: 2,
-            title: '10 действий на ферме',
-          },
-          fire_work: {
-            rewardType: 'fire_work',
-            rewardPrice: 2,
-            title: 'Потушить 25 огоньков пожарным',
-          },
-          race: {
-            rewardType: 'race',
-            rewardPrice: 2,
-            title: 'Проехать 1 уличную гонку',
-          },
-          treasure: {
-            rewardType: 'treasure',
-            rewardPrice: 2,
-            title: 'Выкопать 1 сокровище(не мусор)',
           },
           cinema: {
             rewardType: 'cinema',
@@ -64,46 +30,6 @@
             rewardType: 'ammunation',
             rewardPrice: 2,
             title: 'Успешная тренировка в тире',
-          },
-          hunting: {
-            rewardType: 'hunting',
-            rewardPrice: 4,
-            title: '5 раз снять 100% шкуру с животных',
-          },
-          contraband: {
-            rewardType: 'contraband',
-            rewardPrice: 4,
-            title: 'Сдать 5 контрабанды',
-          },
-          tk: {
-            rewardType: 'tk',
-            rewardPrice: 2,
-            title: 'Выиграть 5 игр в тренировочном комплексе со ставкой',
-          },
-          maze: {
-            rewardType: 'maze',
-            rewardPrice: 2,
-            title: 'Выиграть 3 любых игры на арене со ставкой',
-          },
-          casino: {
-            rewardType: 'casino',
-            rewardPrice: 4,
-            title: 'Нули в казино',
-          },
-          post: {
-            rewardType: 'post',
-            rewardPrice: 2,
-            title: '10 посылок на почте',
-          },
-          bus: {
-            rewardType: 'bus',
-            rewardPrice: 4,
-            title: '2 круга на любом маршруте автобусника',
-          },
-          gym: {
-            rewardType: 'gym',
-            rewardPrice: 2,
-            title: '20 подходов в зале',
           },
           site: {
             rewardType: 'site',
@@ -150,16 +76,6 @@
             rewardPrice: 2,
             title: 'Победа в арм ресслинге.',
           },
-          fish: {
-            rewardType: 'fish',
-            rewardPrice: 8,
-            title: 'Поймать 20 рыб.',
-          },
-          metro: {
-            rewardType: 'metro',
-            rewardPrice: 4,
-            title: 'Проехать 1 станцию на метро.',
-          },
           service: {
             rewardType: 'service',
             rewardPrice: 2,
@@ -179,6 +95,96 @@
             rewardType: 'petball',
             rewardPrice: 4,
             title: 'Кинуть мяч питомцу 15 раз.',
+          },
+          build: {
+            rewardType: 'build',
+            rewardPrice: 4,
+            title: '25 действий на стройке',
+          },
+          mine: {
+            rewardType: 'mine',
+            rewardPrice: 4,
+            title: '25 действий в шахте',
+          },
+          port: {
+            rewardType: 'port',
+            rewardPrice: 4,
+            title: '25 действий в порту',
+          },
+          carting: {
+            rewardType: 'carting',
+            rewardPrice: 2,
+            title: 'Выиграть гонку в картинге',
+          },
+          ferm: {
+            rewardType: 'ferm',
+            rewardPrice: 2,
+            title: '10 действий на ферме',
+          },
+          fire_work: {
+            rewardType: 'fire_work',
+            rewardPrice: 2,
+            title: 'Потушить 25 огоньков пожарным',
+          },
+          race: {
+            rewardType: 'race',
+            rewardPrice: 2,
+            title: 'Проехать 1 уличную гонку',
+          },
+          treasure: {
+            rewardType: 'treasure',
+            rewardPrice: 2,
+            title: 'Выкопать 1 сокровище(не мусор)',
+          },
+          hunting: {
+            rewardType: 'hunting',
+            rewardPrice: 4,
+            title: '5 раз снять 100% шкуру с животных',
+          },
+          contraband: {
+            rewardType: 'contraband',
+            rewardPrice: 4,
+            title: 'Сдать 5 контрабанды',
+          },
+          tk: {
+            rewardType: 'tk',
+            rewardPrice: 2,
+            title: 'Выиграть 5 игр в тренировочном комплексе со ставкой',
+          },
+          maze: {
+            rewardType: 'maze',
+            rewardPrice: 2,
+            title: 'Выиграть 3 любых игры на арене со ставкой',
+          },
+          casino: {
+            rewardType: 'casino',
+            rewardPrice: 4,
+            title: 'Нули в казино',
+          },
+          post: {
+            rewardType: 'post',
+            rewardPrice: 2,
+            title: '10 посылок на почте',
+          },
+          bus: {
+            rewardType: 'bus',
+            rewardPrice: 4,
+            title: '2 круга на любом маршруте автобусника',
+          },
+          gym: {
+            rewardType: 'gym',
+            rewardPrice: 2,
+            title: '20 подходов в зале',
+          },
+          fish: {
+            rewardType: 'fish',
+            rewardPrice: 8,
+            title: 'Поймать 20 рыб.',
+          },
+          metro: {
+            rewardType: 'metro',
+            rewardPrice: 4,
+            title: 'Проехать 1 станцию на метро.',
           },
           pet: {
             rewardType: 'pet',
@@ -204,11 +210,6 @@
             rewardType: 'airdrop',
             rewardPrice: 4,
             title: 'Принять участие в двух аирдропах.',
-          },
-          online: {
-            rewardType: 'airdrop',
-            rewardPrice: 4,
-            title: '3 часа в онлайне.',
           },
         },
         tasks: [
@@ -271,21 +272,21 @@
           price = state.x2 == true ? price * 2 : price;
           const taskElement = document.createElement("div");
           taskElement.className = `task-item bg-zinc-900 hover:shadow-md hover:bg-zinc-800 rounded-lg p-4 ${
-            task.completed ? "opacity-70 order-last" : "order-none"
+            task.completed && task.rewardType !== 'online' ? "opacity-70 order-last" : "order-none"
           } transform transition-all duration-300`;
           taskElement.innerHTML = `
                   <div class="flex flex-col lg:flex-row md:flex-row justify-between items-start">
                       <div class="max-w-sm">
                           <h3 class="font-bold ${
-                            task.completed ? "line-through" : ""
-                          }">${index + 1}: ${task.title}</h3>
+                            task.completed && task.rewardType !== 'online' ? "line-through" : ""
+                          }">${index + 1}: ${task.title}${task.rewardType === 'online' ? ` Выполнено: ${task.completedCount}раз.` : ' 0'}</h3>
                       </div>
                       <div class="flex mt-1 lg:m-0 md:m-0 items-center space-x-2">
                           <span class="px-2 py-1 bg-purple-500/20 rounded-lg text-sm">
                               +${price}
                           </span>
                           ${
-                            !task.completed
+                            !task.completed && task.rewardType !== 'online'
                               ? `
                               <button onclick="doneTasks(${index})" class="px-2 py-1 bg-green-500/20 text-green-500 rounded-lg hover:bg-green-500/30 transition-colors duration-300" title="Task done before">
                                   <i class="fas fa-plus"></i>
@@ -300,11 +301,17 @@
                                   <i class="fas fa-check"></i>
                               </button>
                           `
+                              : task.rewardType !== 'online'
+                                 ? `
+                                <button onclick="completeTask(${index})" class="px-2 py-1 bg-green-500/20 text-green-500 rounded-lg hover:bg-green-500/30 transition-colors duration-300" title="Task not done">
+                                    <i class="fas fa-close"></i>
+                                </button>
+                              `
                               : `
-                              <button onclick="completeTask(${index})" class="px-2 py-1 bg-green-500/20 text-green-500 rounded-lg hover:bg-green-500/30 transition-colors duration-300" title="Task not done">
-                                  <i class="fas fa-close"></i>
+                              <button onclick="completeTask(${index})" class="px-2 py-1 bg-green-500/20 text-green-500 rounded-lg hover:bg-green-500/30 transition-colors duration-300" title="Task completed">
+                                  <i class="fas fa-check"></i>
                               </button>
-                          `
+                            `
                           }
                           <button onclick="deleteTask(${index})" class="px-2 py-1 bg-red-500/20 text-red-500 rounded-lg hover:bg-red-500/30 transition-colors duration-300" title="Delete task">
                               <i class="fas fa-trash"></i>
@@ -328,6 +335,7 @@
           rewardPrice,
           rewardType,
           completed: false,
+          completedCount: 0,
         });
 
         saveState();
@@ -339,11 +347,19 @@
         const task = state.tasks[index];
         let price = state.vip == true ? task.rewardPrice : task.rewardPrice / 2;
         price = state.x2 == true ? price * 2 : price;
-        if (task.completed == true) {
+        if (task.completed == true && task.rewardType !== 'online') {
             task.completed = !task.completed;
         } else {
             task.completed = true;
             state.coins += price;
+        }
+
+
+        if (task.rewardType === 'online') {
+          task.completedCount++;
+          console.log({
+            onlineCOunt: task.completedCount,
+          });
         }
 
         // Add completion animation
@@ -353,7 +369,6 @@
 
         saveState();
 
-        // taskElement.classList.add("opacity-50", "translate-x-2");
         setTimeout(() => {
           updateUI();
         }, 500);
