@@ -885,6 +885,23 @@
                     <input id="x2-btn" type="checkbox" onclick="x2Status()" class="cursor-pointer accent-purple-400 text-purple-600 bg-gray-100 border-gray-300 rounded-sm h-5 w-5" />
                   </div>
                 </div>
+
+                                  <!-- Coin done -->
+                <div class="mt-6 bg-zinc-800 rounded-lg p-4 w-full transition-all duration-300 hover:bg-gray-600">
+                  <div class="flex items-center justify-between">
+                    <h1 class="font-medium leading-none">Number of the done BPs today: </h1>
+                    <span id="bp-done" class="text-2xl font-bold text-yellow-500">0</span>
+                  </div>
+                </div>
+                                  <!-- Coin left -->
+                <div class="mt-6 bg-zinc-800 rounded-lg p-4 w-full transition-all duration-300 hover:bg-gray-600">
+                  <div class="flex items-center justify-between">
+                    <h1 class="font-medium leading-none">Number of the left BPs today: </h1>
+                    <span id="bp-left" class="text-2xl font-bold text-yellow-500"
+                      >0</span
+                    >
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -892,7 +909,7 @@
           <!-- Tasks Section -->
           <div class="md:col-span-2">
             <div
-              class="bg-[#111] rounded-xl p-4 lg:p-6 shadow-lg border border-purple-500/20"
+              class="min-h-full flex fleX-col bg-[#111] rounded-xl p-4 lg:p-6 shadow-lg border border-purple-500/20"
             >
               <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold">Active Quests</h2>
@@ -914,7 +931,7 @@
 
               <div
                 id="taskList"
-                class="space-y-4 h-[480px] max-h-full overflow-y-auto pr-2 flex flex-col"
+                class="space-y-4 h-[537px] max-h-full overflow-y-auto pr-2 flex flex-col"
               >
               </div>
             </div>
@@ -942,30 +959,7 @@
                 id="taskRewardType"
                 class="w-full bg-zinc-700 rounded-lg p-2 text-white border border-gray-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300"
               >
-                <option value="build">25 действий на стройке</option>
-                <option value="port">25 действий в порту</option>
-                <option value="mine">25 действий в шахте</option>
-                <option value="ferm">10 действий на ферме</option>
-                <option value="lottery">Купить лотерейный билет</option>
-                <option value="carting">Выиграть гонку в картинге</option>
-                <option value="fire_work">
-                  Потушить 25 "огоньков" пожарным
-                </option>
-                <option value="treasure">Выкопать 1 сокровище(не мусор)</option>
-                <option value="race">Проехать 1 уличную гонку</option>
-                <option value="cinema">Добавить 5 видео в кинотеатре</option>
-                <option value="film_studio">Арендовать киностудию</option>
-                <option value="ammunation">Успешная тренировка в тире</option>
-                <option value="hunting">
-                  5 раз снять 100% шкуру с животных
-                </option>
-                <option value="contraband">Сдать 5 контрабанды</option>
-                <option value="tk">
-                  Выиграть 5 игр в тренировочном комплексе со ставкой
-                </option>
-                <option value="maze">
-                  Выиграть 3 любых игры на арене со ставкой
-                </option>
+                
               </select>
             </div>
             <div class="flex justify-end space-x-4">

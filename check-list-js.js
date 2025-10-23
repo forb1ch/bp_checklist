@@ -2,6 +2,8 @@
     let state = {
         playerName: "Player",
         coins: 0,
+        coinsDone: 0,
+        coinsLeft: 0,
         vip: true,
         x2: false,
         taskReward: {
@@ -10,6 +12,7 @@
             rewardPrice: 4,
             title: '3 часа в онлайне.',
             completedCount: 0,
+            completed: false,
           },
           lottery: {
             rewardType: 'lottery',
@@ -208,11 +211,14 @@
           },
           airdrop: {
             rewardType: 'airdrop',
-            rewardPrice: 4,
+            rewardPrice: 8,
             title: 'Принять участие в двух аирдропах.',
           },
         },
         tasks: [
+        ],
+        tasksToAdd: [
+
         ],
       };
 
@@ -258,9 +264,28 @@
       function updateUI() {
         document.getElementById("playerName").textContent = state.playerName;
         document.getElementById("coins").textContent = state.coins;
+        document.getElementById("bp-done").textContent = state.coinsDone;
+        document.getElementById("bp-left").textContent = state.coinsLeft;
 
         updateTaskList();
+        updateAddTaskList();
       }
+
+      
+      // Update add task list
+      function updateAddTaskList() {
+        const taskListSelect = document.getElementById("taskRewardType");
+        taskListSelect.innerHTML = "";
+        
+        state.tasks.forEach((task, index) => {
+          let price = state.vip == true ? task.rewardPrice : task.rewardPrice / 2;
+          price = state.x2 == true ? price * 2 : price;
+          const taskElement = document.createElement("option");
+          taskElement.value = task.rewardType;
+          taskElement.innerHTML = task.title;
+          taskListSelect.appendChild(taskElement);
+        });
+      };
 
       // Update task list
       function updateTaskList() {
@@ -274,6 +299,7 @@
           taskElement.className = `task-item bg-zinc-900 hover:shadow-md hover:bg-zinc-800 rounded-lg p-4 ${
             task.completed && task.rewardType !== 'online' ? "opacity-70 order-last" : "order-none"
           } transform transition-all duration-300`;
+          taskElement.id = `task-${task.rewardType}`;
           taskElement.innerHTML = `
                   <div class="flex flex-col lg:flex-row md:flex-row justify-between items-start">
                       <div class="max-w-sm">
@@ -321,7 +347,7 @@
               `;
           taskList.appendChild(taskElement);
         });
-      }
+      };
 
       // Task management functions
       function addNewTask(event) {
@@ -339,6 +365,7 @@
         });
 
         saveState();
+        countCoins();
         updateUI();
         closeModal("newTaskModal");
       }
@@ -352,6 +379,7 @@
         } else {
             task.completed = true;
             state.coins += price;
+            state.coinsDone += price;
         }
 
         if (task.rewardType === 'online') {
@@ -364,7 +392,7 @@
         );
 
         saveState();
-
+        countCoins();
         setTimeout(() => {
           updateUI();
         }, 500);
@@ -372,7 +400,10 @@
 
       function doneTasks(index) {
         const task = state.tasks[index];
+        let price = state.vip == true ? task.rewardPrice : task.rewardPrice / 2;
+        price = state.x2 == true ? price * 2 : price;
         task.completed = true;
+        state.coinsDone += price;
 
         // Add completion animation
         const taskElement = document.querySelector(
@@ -380,6 +411,7 @@
         );
 
         saveState();
+        countCoins();
 
         // taskElement.classList.add("opacity-50", "translate-x-2");
         setTimeout(() => {
@@ -403,9 +435,11 @@
             obj.completed = false;
         }
 
+        state.coinsDone = 0;
         state.tasks = tasksList;
    
         saveState();
+        countCoins();
         updateUI();
       }
 
@@ -416,6 +450,7 @@
         state.vip = !state.vip;
    
         saveState();
+        countCoins();
         updateUI();
       }
 
@@ -427,7 +462,28 @@
         state.x2 = !state.x2;
    
         saveState();
+        countCoins();
         updateUI();
+      }
+            
+      function countCoins() {
+        const tasksList = state.tasks;
+        let coinsLeft = 0;
+
+        for (const tasks in tasksList) {
+            // skip loop if the property is from prototype
+            if (!tasksList.hasOwnProperty(tasks)) continue;
+            var obj = tasksList[tasks];
+            let price = state.vip == true ? obj.rewardPrice : obj.rewardPrice / 2;
+            price = state.x2 == true ? price * 2 : price; 
+
+            if (obj.completed == false) {
+              coinsLeft += price;
+              state.coinsLeft = coinsLeft;
+            }
+        }
+
+        saveState();
       }
 
       function deleteTask(index) {
@@ -441,6 +497,7 @@
         setTimeout(() => {
           state.tasks.splice(index, 1);
           saveState();
+          countCoins();
           updateUI();
         }, 300);
       }
@@ -505,7 +562,6 @@
         const x2 = state.vip;
         const x2btn = document.getElementById('x2-btn');
 
-        
         if (state.x2 == true) {
           x2btn.checked = true;
         } else {
@@ -525,6 +581,19 @@
                 obj = {...obj, completed};
 
                 tasksListDefault.push(obj);
+            }
+
+            let coinsLeft = 0;
+
+            for (const tasks in tasksListDefault) {
+                // skip loop if the property is from prototype
+                if (!tasksListDefault.hasOwnProperty(tasks)) continue;
+                var task = tasksListDefault[tasks];
+
+                if (task.completed == false) {
+                  coinsLeft += task.rewardPrice;
+                  state.coinsLeft = coinsLeft;
+                }
             }
        
           saveState();
